@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     public static final Integer INVALID_BUTTON = -1;
     public static final Integer BUTTON_COUNT = 30;
     public static final Integer BAUD_RATE = 115200;
-    public static final Integer ARDUINO_DEVICE_ID = 1027;
+    public static final Integer ACCEPTED_VENDOR_IDS[] = {1027, 6790, 9025};
 
     private static HashMap<Integer, RemoteButton> RemoteState;
     private static Integer focusButtonID = -1;
@@ -331,13 +331,13 @@ public class MainActivity extends AppCompatActivity {
                 for (Map.Entry<String, UsbDevice> entry : usbDevices.entrySet()) {
                     device = entry.getValue();
                     int deviceVID = device.getVendorId();
-                    if (deviceVID == ARDUINO_DEVICE_ID) {
-                        PendingIntent pi = PendingIntent.getBroadcast(this, 0, new Intent(ACTION_USB_PERMISSION), 0);
-                        usbManager.requestPermission(device, pi);
-                        foundDevice = true;
-                    } else {
-                        connection = null;
-                        device = null;
+                    for (int acceptedVID : ACCEPTED_VENDOR_IDS) {
+                        if (deviceVID == acceptedVID) {
+                            PendingIntent pi = PendingIntent.getBroadcast(this, 0, new Intent(ACTION_USB_PERMISSION), 0);
+                            usbManager.requestPermission(device, pi);
+                            foundDevice = true;
+                            break;
+                        }
                     }
                 }
             }
@@ -345,6 +345,8 @@ public class MainActivity extends AppCompatActivity {
             if (foundDevice) {
                 attemptConnection();
             } else {
+                connection = null;
+                device = null;
                 updateStatus("Device not found. Tap here to check again.");
             }
         }

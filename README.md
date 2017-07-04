@@ -28,9 +28,7 @@ As mentioned in the "Getting Started" section, to install this application, the 
 
 Once installed on the Android device, the application "Pronto Remote" should open automatically when a compatible Arduino device\* is connected (and permission is given). If the application is opened before a device is connected, tapping on the application's status message will attempt to connect with the device.
 
-Once a connection is established, tapping on any of the 30\*\* remote buttons will send the corresponding command (through the Arduino device).
-
-All communication between the Android and Arduino devices occurs over serial (as described in the Arduino Pronto Remote project) where the Android device assumes the role of the host.
+Once a connection is established, tapping on any of the 30\*\* remote buttons will send the corresponding command (through the Arduino device). All communication between the Android and Arduino devices occurs over serial (as described in the Arduino Pronto Remote project) where the Android device assumes the role of the host.
 
 Tapping on a button "selects" that button to be the destination for any newly recorded code, or to be edited through the edit menu. These features may be respectively achieved by tapping the "RECORD" and "EDIT" buttons.
 
@@ -40,7 +38,7 @@ Tapping the "EDIT" button opens a menu allowing the button's device name and fun
 
 The "SAVE" and "IMPORT" buttons respectively store, and revert to a saved snapshot of the Pronto Remote layout. "SAVE" copies a description of Pronto Remote's buttons to the Android device's clipboard (to be pasted elsewhere). "IMPORT" opens a menu allowing a saved layout to be pasted and used to update the remote.
 
-\* Compatible devices are any connected device with a Device ID of 1027.
+\* Compatible devices are any connected device with a Vendor ID of 1027, 6790, or 9025. This list may be expended by altering the `ACCEPTED_VENDOR_IDS` array of `MainActivity.java', and `device_filter.xml`.
 
 \*\* The current version of the Pronto Remote Android app provides 30 user-programmable buttons. These are, regrettably, hard-coded into the `acitivty_main.xml` activity layout, using output from a Python script (not included).
 
@@ -50,6 +48,6 @@ The "SAVE" and "IMPORT" buttons respectively store, and revert to a saved snapsh
 
 ## Acknowledgements
 
-* **felHR85** (https://github.com/felHR85), author of the library [`UsbSerial`](https://github.com/felHR85/UsbSerial) which powers this project.
+* **Felipe Herranz** - [felHR85](https://github.com/felHR85), author of the library [`UsbSerial`](https://github.com/felHR85/UsbSerial) which powers this project.
 
-* **romannurik** (https://github.com/romannurik), author of the online tool [`Android Asset Studio`](https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html), used to generate this application's icon.
+* **Roman Nurik** - [romannurik](https://github.com/romannurik), author of the online tool [`Android Asset Studio`](https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html), used to generate this application's icon.
