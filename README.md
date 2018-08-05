@@ -4,7 +4,7 @@ An Android app to send and record remote control commands through an Arduino dev
 
 ## Screenshots
 
-![Main application screen](images/screen_main.jpg) ![Command edit application screen](images/screen_edit.jpg)
+![Main application screen](images/screen_main.jpg | width=100) ![Command edit application screen](images/screen_edit.jpg | width=100)
 
 ## Getting Started
 
