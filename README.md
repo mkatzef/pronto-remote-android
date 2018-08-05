@@ -2,13 +2,17 @@
 
 An Android app to send and record remote control commands through an Arduino device. Please see [this project](https://github.com/mkatzef/pronto-remote) for the Arduino setup.
 
+## Screenshots
+
+![Main application screen](images/screen_main.jpg) ![Command edit application screen](images/screen_edit.jpg)
+
 ## Getting Started
 
 The app is not currently available through standard app distribution sources, it must be built and installed locally.
 
 This project was created and uploaded to GitHub through [Android Studio](https://developer.android.com/tools). After cloning this repository, the project may be opened in, modified, and installed on an Android device, all using this IDE.
 
-### Prerequisites
+### Requirements
 
 * Android Studio - "The Official IDE for Android". Available [here](https://developer.android.com/tools).
 * An Arduino Device - The device capable of receiving and transmitting infrared signals in the Pronto Hex format\*.
