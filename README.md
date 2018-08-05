@@ -3,8 +3,14 @@
 An Android app to send and record remote control commands through an Arduino device. Please see [this project](https://github.com/mkatzef/pronto-remote) for the Arduino setup.
 
 ## Screenshots
-
-![Main application screen](images/screen_main.jpg | width=100) ![Command edit application screen](images/screen_edit.jpg | width=100)
+<table>
+<td>
+<img src="images/screen_main.jpg" width="233" title="Main application screen">
+</td>
+<td>
+<img src="images/screen_edit.jpg" width="233" title="Command edit application screen">
+</td>
+</table>
 
 ## Getting Started
 
